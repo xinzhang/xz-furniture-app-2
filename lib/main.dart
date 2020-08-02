@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:xz_furniture_app_2/constants.dart';
-import 'package:xz_furniture_app_2/screens/home_screen.dart';
+import 'package:xz_furniture_app_2/screens/home/home_screen.dart';
 
 void main() {
   runApp(MyApp());
