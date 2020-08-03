@@ -17,8 +17,10 @@ class ProductInfo extends StatelessWidget {
     TextStyle lightTextStyle = TextStyle(color: kTextColor.withOpacity(0.6));
     return Container(
         padding: EdgeInsets.symmetric(horizontal: defaultSize * 2),
-        width: defaultSize * 15,
+        //width: defaultSize * 15,
         height: defaultSize * 37.5,
+        width: defaultSize *
+            (SizeConfig.orientation == Orientation.landscape ? 35 : 15), //150
         //color: Colors.black45,
         child: SafeArea(
           child: Column(

@@ -13,12 +13,36 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     double defaultSize = SizeConfig.defaultSize;
     return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          ProductInfo(product: product),
-          ProductDescription(product: product)
-        ],
+      child: SizedBox(
+        width: double.infinity,
+        //height: SizeConfig.screenHeight - AppBar().preferredSize.height,
+        height: SizeConfig.orientation == Orientation.landscape
+            ? SizeConfig.screenWidth
+            : SizeConfig.screenHeight - AppBar().preferredSize.height,
+        child: Stack(
+          //crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            ProductInfo(product: product),
+            Positioned(
+                top: defaultSize * 37.5,
+                left: 0,
+                right: 0,
+                child: ProductDescription(product: product)),
+            Positioned(
+              top: defaultSize * 9.5,
+              right: -defaultSize * 7.5,
+              child: Hero(
+                tag: product.id,
+                child: Image.network(
+                  product.image,
+                  fit: BoxFit.cover,
+                  height: defaultSize * 37.8, //378
+                  width: defaultSize * 36.4,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
