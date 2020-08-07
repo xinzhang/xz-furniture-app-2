@@ -20,7 +20,10 @@ class Body extends StatelessWidget {
       children: <Widget>[
         Padding(
           padding: EdgeInsets.all(defaultSize * 2),
-          child: TitleText(title: "Browse by Categories"),
+          child: Row(children: <Widget>[
+            Expanded(child: TitleText(title: "Browse by Categories")),
+            TitleText(title: "View All"),
+          ]),
         ),
         FutureBuilder(
           future: fetchCategories(),
