@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:xz_furniture_app_2/constants.dart';
+import 'package:xz_furniture_app_2/models/Cart.dart';
 import 'package:xz_furniture_app_2/models/Product.dart';
 import 'package:xz_furniture_app_2/size_config.dart';
 
@@ -57,7 +59,9 @@ class ProductDescription extends StatelessWidget {
                       borderRadius: BorderRadius.circular(50),
                     ),
                     color: kPrimaryColor,
-                    onPressed: () {},
+                    onPressed: () {
+                      Provider.of<CartModel>(context, listen: false).add(product);
+                    },
                     child: Text("Add to Cart",
                         style: TextStyle(
                             color: Colors.white,

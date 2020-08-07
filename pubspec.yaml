@@ -30,6 +30,7 @@ dependencies:
     flutter_svg: ^0.17.4 #It help us to use SVG on our app dont use 0.18.*
     google_fonts: ^1.1.0 # We can use any fonts from google fonts
     http: ^0.12.2 # It help us to  fatch data from API
+    provider: ^4.1.0
 
 dev_dependencies:
     flutter_test:
