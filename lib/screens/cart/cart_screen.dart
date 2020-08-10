@@ -23,7 +23,8 @@ class CartScreen extends StatelessWidget {
           Navigator.pop(context);
         },
       ),
-      title: Text("Cart"),
+      title: Text("Cart",
+          style: TextStyle(color: kTextColor, fontWeight: FontWeight.bold)),
       actions: <Widget>[
         IconButton(
           icon: SvgPicture.asset("assets/icons/pay.svg"),
